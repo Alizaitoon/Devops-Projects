@@ -1,1 +1,1 @@
-# provisioning App services using Vagrant Project.
+# provisioning App services using Vagrant tool Project.
