@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+  config.hostmanager.enabled = true 
+  config.hostmanager.manage_host = true
+  
+### Jenkins vm  ####
+  config.vm.define "jen01" do |jen01|
+    jen01.vm.box = "generic/rocky8"
+    jen01.vm.hostname = "jen01"
+    jen01.vm.network "private_network", ip: "192.168.56.30"
+    jen01.vm.network "public_network"
+    jen01.vm.provider "virtualbox" do |vb|
+     vb.memory = "2048"
+   end
+  end
+
+### App vm  #### 
+  config.vm.define "app02" do |app02|
+    app02.vm.box = "generic/centos8"
+    app02.vm.hostname = "app02"
+    app02.vm.network "private_network", ip: "192.168.56.20"
+    app02.vm.network "public_network"
+    app02.vm.provider "virtualbox" do |vb|
+     vb.memory = "1024"
+   end
+  end
+
+end
+

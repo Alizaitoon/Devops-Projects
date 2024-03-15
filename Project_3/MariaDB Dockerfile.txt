@@ -1,0 +1,4 @@
+FROM mariadb
+ENV MARIADB_ROOT_PASSWORD="admin123"
+ENV MARIADB_DATABASE="accounts"
+ADD db_backup.sql docker-entrypoint-initdb.d/db_backup.sql
